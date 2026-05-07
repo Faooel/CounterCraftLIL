@@ -12,8 +12,8 @@ let selectedRoleFilter = null;     // Filtre champions
 let defaultRoleSelection = null;   // Rôle par défaut pour modal
 let selectedCounterRole = null;    // Rôle sélectionné dans modal
 
-const apiUrl = "https://countercraft.onrender.com";
-//const apiUrl = "http://localhost:8001";
+// Utiliser une chaîne vide pour que l'API appelle le même domaine (Localhost ou Render)
+const apiUrl = ""; 
 
 // ==============================
 // CHARGEMENT DES DONNÉES
@@ -40,62 +40,47 @@ document.querySelectorAll('.role-filter').forEach(icon => {
   icon.addEventListener('click', () => {
     const role = icon.dataset.role;
     
-    // Si on clique sur le filtre déjà actif, on le désélectionne
     if (selectedRoleFilter === role) {
-      // Reset à "All"
       selectedRoleFilter = null;
       document.querySelectorAll('.role-filter').forEach(i => {
         i.classList.remove('border-emerald-500', 'active');
         i.classList.add('border-transparent');
       });
-      // Réactiver le "All"
       document.querySelector('.role-filter[data-role=""]').classList.add('border-emerald-500', 'active');
       document.querySelector('.role-filter[data-role=""]').classList.remove('border-transparent');
       document.getElementById('clearRoleFilter').classList.add('hidden');
     } else {
-      // Sinon on sélectionne le nouveau filtre
       selectedRoleFilter = role;
-      
       document.querySelectorAll('.role-filter').forEach(i => {
         i.classList.remove('border-emerald-500', 'active');
         i.classList.add('border-transparent');
       });
-      
       icon.classList.remove('border-transparent');
       icon.classList.add('border-emerald-500', 'active');
-      
-      // Afficher le bouton de réinitialisation sauf si c'est "All"
       if (role === '') {
         document.getElementById('clearRoleFilter').classList.add('hidden');
       } else {
         document.getElementById('clearRoleFilter').classList.remove('hidden');
       }
     }
-    
     updateChampionList();
   });
 });
 
-// Bouton de réinitialisation
 document.getElementById('clearRoleFilter').addEventListener('click', () => {
   selectedRoleFilter = null;
-  
   document.querySelectorAll('.role-filter').forEach(i => {
     i.classList.remove('border-emerald-500', 'active');
     i.classList.add('border-transparent');
   });
-  
-  // Réactiver le "All"
   document.querySelector('.role-filter[data-role=""]').classList.add('border-emerald-500', 'active');
   document.querySelector('.role-filter[data-role=""]').classList.remove('border-transparent');
-  
   document.getElementById('clearRoleFilter').classList.add('hidden');
   updateChampionList();
 });
 
 function updateChampionList() {
   const search = searchInput.value.toLowerCase();
-
   const filtered = allChampions.filter(champ => {
     const matchesSearch = champ.name.toLowerCase().includes(search);
     const roles = championRoles[champ.id] || [];
@@ -125,19 +110,15 @@ searchInput.addEventListener('input', updateChampionList);
 document.querySelectorAll('.default-role').forEach(icon => {
   icon.addEventListener('click', () => {
     const role = icon.dataset.role;
-    
-    // Toggle : si déjà sélectionné, on désélectionne
     if (defaultRoleSelection === role) {
       icon.classList.remove('border-cyan-500', 'opacity-100');
       icon.classList.add('border-transparent', 'opacity-60');
       defaultRoleSelection = null;
     } else {
-      // Sinon on désélectionne tout et on sélectionne celui-ci
       document.querySelectorAll('.default-role').forEach(i => {
         i.classList.remove('border-cyan-500', 'opacity-100');
         i.classList.add('border-transparent', 'opacity-60');
       });
-      
       icon.classList.remove('border-transparent', 'opacity-60');
       icon.classList.add('border-cyan-500', 'opacity-100');
       defaultRoleSelection = role;
@@ -150,16 +131,15 @@ document.querySelectorAll('.default-role').forEach(icon => {
 // ==============================
 
 let selectedChampion = null;
+const modal = document.getElementById('modal');
+const modalCounters = document.getElementById('modalCounters');
 
 function openModal(championId) {
   const champ = allChampions.find(c => c.id === championId);
   selectedChampion = champ;
-
   document.getElementById('modalChampionIcon').src = iconBaseURL + champ.image.full;
   document.getElementById('modalChampionName').textContent = champ.name;
-
   renderCounters(champ.name);
-
   modal.classList.remove('hidden');
   modal.classList.add('flex');
 }
@@ -174,55 +154,81 @@ function closeModal() {
 // ==============================
 
 async function renderCounters(championName) {
-  const res = await fetch(`${apiUrl}/counters/${championName}`);
-  const counters = await res.json();
+  try {
+    const res = await fetch(`${apiUrl}/counters/${championName}`);
+    const counters = await res.json();
+    const grouped = {};
 
-  const grouped = {};
+    for (const c of counters) {
+      const role = c.role || "All";
+      if (!grouped[role]) grouped[role] = [];
+      grouped[role].push(c);
+    }
 
-  for (const c of counters) {
-    const role = c.role || "All";
-    if (!grouped[role]) grouped[role] = [];
-    grouped[role].push(c);
-  }
-
-  modalCounters.innerHTML = Object.entries(grouped).map(([role, list]) => `
-    <div class="bg-gray-700/30 rounded-xl p-4 border border-gray-600/50">
-      <div class="flex items-center gap-2 mb-3">
-        <img src="/static/icon/${role}.png" class="w-8 h-8" />
-        <h3 class="font-semibold text-lg text-emerald-400">${role}</h3>
-      </div>
-      <div class="space-y-2">
-        ${list.sort((a,b)=>a.rank-b.rank).map(counter => `
-          <div class="counter-item flex items-center justify-between bg-gray-800/50 p-3 rounded-lg border border-gray-700/50">
-            <div class="flex items-center gap-3">
-              <img src="${iconBaseURL + counter.name + '.png'}" class="w-12 h-12 rounded-lg border-2 border-gray-600" />
-              <div>
-                <p class="font-semibold text-white">${counter.name}</p>
-                ${counter.comment ? `<p class="text-sm text-gray-400">${counter.comment}</p>` : ''}
+    modalCounters.innerHTML = Object.entries(grouped).map(([role, list]) => `
+      <div class="bg-gray-700/30 rounded-xl p-4 border border-gray-600/50">
+        <div class="flex items-center gap-2 mb-3">
+          <img src="/static/icon/${role}.png" class="w-8 h-8" />
+          <h3 class="font-semibold text-lg text-emerald-400">${role}</h3>
+        </div>
+        <div class="space-y-2">
+          ${list.sort((a,b)=>a.rank-b.rank).map(counter => `
+            <div class="counter-item flex items-center justify-between bg-gray-800/50 p-3 rounded-lg border border-gray-700/50">
+              <div class="flex items-center gap-3">
+                <img src="${iconBaseURL + counter.name + '.png'}" class="w-12 h-12 rounded-lg border-2 border-gray-600" />
+                <div>
+                  <p class="font-semibold text-white">${counter.name}</p>
+                  ${counter.comment ? `<p class="text-sm text-gray-400">${counter.comment}</p>` : ''}
+                </div>
               </div>
+              <button onclick="deleteCounter('${selectedChampion.name}', '${counter.name}', '${role}')"
+                class="text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all p-2 rounded-lg">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
             </div>
-            <button onclick="deleteCounter('${selectedChampion.name}', '${counter.name}', '${role}')"
-              class="text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all p-2 rounded-lg">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
-          </div>
-        `).join('')}
+          `).join('')}
+        </div>
       </div>
-    </div>
-  `).join('');
+    `).join('');
+  } catch (err) {
+    console.error("Erreur lors du chargement des counters:", err);
+  }
 }
 
 async function deleteCounter(champion, counterName, role) {
-  if (!confirm(`Delete ${counterName} (${role})?`)) return;
-  await fetch(`${apiUrl}/counters/${champion}/${counterName}/${role}`, { method: "DELETE" });
-  renderCounters(champion);
+  if (!confirm(`Supprimer ${counterName} (${role}) ?`)) return;
+
+  // On lance la requête de suppression
+  const res = await fetch(`${apiUrl}/counters/${champion}/${counterName}/${role}`, { 
+    method: "DELETE" 
+  });
+
+  if (res.ok) {
+    console.log("Supprimé sur GitHub !");
+    
+    // ACTION : On recharge immédiatement les counters pour ce champion
+    // On ajoute un petit délai de 500ms pour laisser à GitHub le temps d'indexer le fichier
+    setTimeout(() => {
+      renderCounters(champion);
+    }, 500);
+
+  } else {
+    alert("Erreur lors de la suppression sur GitHub.");
+  }
 }
 
 // ==============================
 // SELECT CHAMPION POUR AJOUT
 // ==============================
+
+const counterChampion = document.getElementById('counterChampion');
+const addCounterBtn = document.getElementById('addCounterBtn');
+const addCounterModal = document.getElementById('addCounterModal');
+const addCounterForm = document.getElementById('addCounterForm');
+const counterNote = document.getElementById('counterNote');
+const counterOrder = document.getElementById('counterOrder');
 
 function populateCounterSelect() {
   counterChampion.innerHTML = allChampions.map(c => `
@@ -247,34 +253,28 @@ function populateCounterSelect() {
 function updateCounterForRoleOptions() {
   const container = document.getElementById("counterRoleIcons");
   const roles = championRoles[selectedChampion.id] || [];
-
   container.innerHTML = roles.map(role => `
     <img src="/static/icon/${role}.png" 
          data-role="${role}"
          class="counter-role role-icon w-14 h-14 p-2 rounded-xl bg-gray-700/50 border-2 border-transparent opacity-60 hover:opacity-100 transition-all cursor-pointer" />
   `).join('');
-
   activateCounterRoleListeners();
 }
 
 function activateCounterRoleListeners() {
   const icons = document.querySelectorAll(".counter-role");
-
-  // reset visuel
   icons.forEach(i => {
     i.classList.add("opacity-60", "border-transparent");
     i.classList.remove("border-emerald-500", "opacity-100");
     i.style.pointerEvents = "auto";
   });
 
-  // 🎯 Si un seul rôle disponible, le sélectionner automatiquement
   if (icons.length === 1) {
     selectCounterRoleIcon(icons[0]);
     icons[0].style.pointerEvents = "none";
     return;
   }
 
-  // 🎯 Pré-sélection selon rôle par défaut
   if (defaultRoleSelection) {
     const target = [...icons].find(i => i.dataset.role === defaultRoleSelection);
     if (target) {
@@ -283,7 +283,6 @@ function activateCounterRoleListeners() {
     }
   }
 
-  // Sélection libre
   icons.forEach(icon => {
     icon.addEventListener("click", () => selectCounterRoleIcon(icon));
   });
@@ -294,10 +293,8 @@ function selectCounterRoleIcon(icon) {
     i.classList.add("opacity-60", "border-transparent");
     i.classList.remove("border-emerald-500", "opacity-100");
   });
-
   icon.classList.remove("opacity-60", "border-transparent");
   icon.classList.add("border-emerald-500", "opacity-100");
-
   selectedCounterRole = icon.dataset.role;
 }
 
@@ -308,9 +305,8 @@ function selectCounterRoleIcon(icon) {
 addCounterBtn.addEventListener('click', () => {
   counterNote.value = '';
   counterOrder.value = '1';
-
+  selectedCounterRole = null;
   updateCounterForRoleOptions();
-
   addCounterModal.classList.remove('hidden');
   addCounterModal.classList.add('flex');
 });
@@ -322,16 +318,15 @@ function closeAddCounterModal() {
 
 addCounterForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-
   if (!selectedCounterRole) {
-    alert("Select a role!");
+    alert("Sélectionne un rôle !");
     return;
   }
 
   const payload = {
     name: counterChampion.value,
     comment: counterNote.value.trim(),
-    rank: parseInt(counterOrder.value),
+    rank: parseInt(counterOrder.value) || 1,
     role: selectedCounterRole
   };
 
@@ -342,7 +337,8 @@ addCounterForm.addEventListener('submit', async (e) => {
   });
 
   if (!res.ok) {
-    alert("API Error");
+    const errData = await res.json();
+    alert("Erreur API : " + (errData.detail || "Inconnue"));
     return;
   }
 

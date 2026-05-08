@@ -82,11 +82,14 @@ def add_counter(champion: str, new_counter: dict):
 @app.delete("/counters/{champion}/{counter_name}/{role}")
 def delete_counter(champion: str, counter_name: str, role: str):
     data, sha = get_github_file()
+    
+    # On utilise .lower() et on compare pour être sûr
     new_data = [c for c in data if not (
-        c.get("champion") == champion and 
-        c.get("name") == counter_name and 
+        c.get("champion").lower() == champion.lower() and 
+        c.get("name").lower() == counter_name.lower() and 
         c.get("role") == role
     )]
+    
     if update_github_file(new_data, sha):
         return {"status": "deleted"}
     raise HTTPException(status_code=500, detail="Erreur suppression")

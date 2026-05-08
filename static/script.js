@@ -181,7 +181,11 @@ async function renderCounters(championName) {
                   ${counter.comment ? `<p class="text-sm text-gray-400">${counter.comment}</p>` : ''}
                 </div>
               </div>
-              <button onclick="deleteCounter('${selectedChampion.name}', '${counter.name}', '${role}')"
+              <button 
+                data-champion="${selectedChampion.name}" 
+                data-counter="${counter.name}" 
+                data-role="${role}"
+                onclick="handleDelete(this)"
                 class="text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all p-2 rounded-lg">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -197,25 +201,28 @@ async function renderCounters(championName) {
   }
 }
 
+async function handleDelete(button) {
+    const champion = button.dataset.champion;
+    const counterName = button.dataset.counter;
+    const role = button.dataset.role;
+    
+    // On appelle ta fonction existante
+    await deleteCounter(champion, counterName, role);
+}
+
 async function deleteCounter(champion, counterName, role) {
   if (!confirm(`Supprimer ${counterName} (${role}) ?`)) return;
 
-  // On lance la requête de suppression
-  const res = await fetch(`${apiUrl}/counters/${champion}/${counterName}/${role}`, { 
-    method: "DELETE" 
-  });
+  // encodeURIComponent permet de gérer proprement l'apostrophe de Kai'Sa
+  const url = `${apiUrl}/counters/${encodeURIComponent(champion)}/${encodeURIComponent(counterName)}/${encodeURIComponent(role)}`;
+  
+  const res = await fetch(url, { method: "DELETE" });
 
   if (res.ok) {
-    console.log("Supprimé sur GitHub !");
-    
-    // ACTION : On recharge immédiatement les counters pour ce champion
-    // On ajoute un petit délai de 500ms pour laisser à GitHub le temps d'indexer le fichier
-    setTimeout(() => {
-      renderCounters(champion);
-    }, 500);
-
+    // Supprimer l'élément visuellement sans attendre
+    renderCounters(champion);
   } else {
-    alert("Erreur lors de la suppression sur GitHub.");
+    alert("Erreur lors de la suppression.");
   }
 }
 

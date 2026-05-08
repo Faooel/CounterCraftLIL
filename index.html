@@ -11,6 +11,19 @@
   <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
   <style>
+    /* --- STYLE DES FAVORIS --- */
+    .fav-btn {
+      transition: all 0.2s ease;
+    }
+    .fav-btn.active {
+      color: #fbbf24 !important; /* Jaune doré */
+      transform: scale(1.1);
+      opacity: 1 !important;
+    }
+    .champion-card.is-favorite {
+      border-color: #fbbf24 !important;
+      box-shadow: 0 0 15px rgba(251, 191, 36, 0.2);
+    }
     .role-icon {
       transition: all 0.2s ease-in-out;
       cursor: pointer;

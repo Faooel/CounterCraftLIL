@@ -1,9 +1,7 @@
 [
     {
         "type": "config_favs",
-        "list": [
-            "Anivia"
-        ]
+        "list": []
     },
     {
         "champion": "Alistar",

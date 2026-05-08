@@ -5,5 +5,12 @@
         "comment": "tes",
         "rank": 1,
         "role": "Bot"
+    },
+    {
+        "champion": "Kai'Sa",
+        "name": "Ahri",
+        "comment": "TEST",
+        "rank": 1,
+        "role": "Bot"
     }
 ]

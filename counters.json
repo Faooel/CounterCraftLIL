@@ -1,22 +1,29 @@
 [
-    {
-        "type": "config_favs",
-        "list": [
-            "Ambessa"
-        ]
-    },
-    {
-        "champion": "Alistar",
-        "name": "Aatrox",
-        "comment": "TEST",
-        "rank": 1,
-        "role": "Support"
-    },
-    {
-        "champion": "Akshan",
-        "name": "Aatrox",
-        "comment": "ffff",
-        "rank": 1,
-        "role": "Mid"
-    }
+  {
+    "type": "config_favs",
+    "list": [
+      "Ambessa"
+    ]
+  },
+  {
+    "champion": "Alistar",
+    "name": "Aatrox",
+    "comment": "TEST",
+    "rank": 1,
+    "role": "Support"
+  },
+  {
+    "champion": "Akshan",
+    "name": "Aatrox",
+    "comment": "ffff",
+    "rank": 1,
+    "role": "Mid"
+  },
+  {
+    "champion": "Ambessa",
+    "name": "Aatrox",
+    "comment": "rrrr",
+    "rank": 1,
+    "role": "Top"
+  }
 ]

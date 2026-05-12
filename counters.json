@@ -526,5 +526,12 @@
     "comment": "",
     "rank": 3,
     "role": "Mid"
+  },
+  {
+    "champion": "Aurora",
+    "name": "Cassiopeia",
+    "comment": "",
+    "rank": 1,
+    "role": "Mid"
   }
 ]

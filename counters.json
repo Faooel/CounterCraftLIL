@@ -846,5 +846,12 @@
     "comment": "",
     "rank": 1,
     "role": "Mid"
+  },
+  {
+    "champion": "Azir",
+    "name": "Leblanc",
+    "comment": "",
+    "rank": 5,
+    "role": "Mid"
   }
 ]

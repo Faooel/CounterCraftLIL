@@ -790,5 +790,12 @@
     "comment": "",
     "rank": 2,
     "role": "Mid"
+  },
+  {
+    "champion": "Aurelion Sol",
+    "name": "Cassiopeia",
+    "comment": "",
+    "rank": 1,
+    "role": "Mid"
   }
 ]

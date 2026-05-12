@@ -463,5 +463,12 @@
     "comment": "",
     "rank": 2,
     "role": "Mid"
+  },
+  {
+    "champion": "Ahri",
+    "name": "Cassiopeia",
+    "comment": "",
+    "rank": 3,
+    "role": "Mid"
   }
 ]

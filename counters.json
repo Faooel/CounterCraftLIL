@@ -811,5 +811,12 @@
     "comment": "",
     "rank": 2,
     "role": "Mid"
+  },
+  {
+    "champion": "Aurelion Sol",
+    "name": "Viktor",
+    "comment": "",
+    "rank": 1,
+    "role": "Mid"
   }
 ]

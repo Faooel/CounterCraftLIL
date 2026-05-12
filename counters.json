@@ -1,20 +1,442 @@
 [
   {
     "type": "config_favs",
-    "list": []
+    "list": [
+      "Ambessa",
+      "Camille",
+      "Jax",
+      "Gwen",
+      "KSante",
+      "Aatrox",
+      "Akali",
+      "Renekton",
+      "Ornn",
+      "Sion",
+      "Rumble",
+      "Zaahen",
+      "Irelia",
+      "Malphite",
+      "Skarner"
+    ]
   },
   {
-    "champion": "Alistar",
-    "name": "Aatrox",
-    "comment": "TEST",
+    "champion": "Aatrox",
+    "name": "Renekton",
+    "comment": "all time prio",
     "rank": 1,
-    "role": "Support"
+    "role": "Top"
   },
   {
-    "champion": "Akshan",
-    "name": "Aatrox",
-    "comment": "ffff",
+    "champion": "Aatrox",
+    "name": "Rumble",
+    "comment": "",
     "rank": 1,
-    "role": "Mid"
+    "role": "Top"
+  },
+  {
+    "champion": "Aatrox",
+    "name": "Irelia",
+    "comment": "level 4 win",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Aatrox",
+    "name": "Jax",
+    "comment": "",
+    "rank": 2,
+    "role": "Top"
+  },
+  {
+    "champion": "Akali",
+    "name": "Sion",
+    "comment": "",
+    "rank": 2,
+    "role": "Top"
+  },
+  {
+    "champion": "Akali",
+    "name": "KSante",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Akali",
+    "name": "Ornn",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Akali",
+    "name": "Poppy",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Ambessa",
+    "name": "Renekton",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Ambessa",
+    "name": "Jax",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Ambessa",
+    "name": "Irelia",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Ambessa",
+    "name": "Poppy",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Ambessa",
+    "name": "Gwen",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Gwen",
+    "name": "Akali",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Gwen",
+    "name": "Rumble",
+    "comment": "",
+    "rank": 2,
+    "role": "Top"
+  },
+  {
+    "champion": "Gwen",
+    "name": "Irelia",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Irelia",
+    "name": "Renekton",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Irelia",
+    "name": "Jax",
+    "comment": "",
+    "rank": 2,
+    "role": "Top"
+  },
+  {
+    "champion": "Irelia",
+    "name": "KSante",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Jax",
+    "name": "Akali",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Jax",
+    "name": "Renekton",
+    "comment": "",
+    "rank": 2,
+    "role": "Top"
+  },
+  {
+    "champion": "Jax",
+    "name": "Poppy",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "K'Santé",
+    "name": "Gwen",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "K'Santé",
+    "name": "Gnar",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "K'Santé",
+    "name": "Poppy",
+    "comment": "",
+    "rank": 2,
+    "role": "Top"
+  },
+  {
+    "champion": "Ornn",
+    "name": "Aatrox",
+    "comment": "",
+    "rank": 2,
+    "role": "Top"
+  },
+  {
+    "champion": "Ornn",
+    "name": "Rumble",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Ornn",
+    "name": "Sion",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Ornn",
+    "name": "KSante",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Renekton",
+    "name": "Sion",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Renekton",
+    "name": "Ornn",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Renekton",
+    "name": "KSante",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Rumble",
+    "name": "KSante",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Rumble",
+    "name": "Ornn",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Rumble",
+    "name": "Ambessa",
+    "comment": "",
+    "rank": 2,
+    "role": "Top"
+  },
+  {
+    "champion": "Sion",
+    "name": "Gwen",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Sion",
+    "name": "Chogath",
+    "comment": "",
+    "rank": 2,
+    "role": "Top"
+  },
+  {
+    "champion": "Sion",
+    "name": "KSante",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Zaahen",
+    "name": "Renekton",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Zaahen",
+    "name": "Jax",
+    "comment": "",
+    "rank": 2,
+    "role": "Top"
+  },
+  {
+    "champion": "Zaahen",
+    "name": "Akali",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Darius",
+    "name": "Renekton",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Darius",
+    "name": "Jax",
+    "comment": "",
+    "rank": 2,
+    "role": "Top"
+  },
+  {
+    "champion": "Darius",
+    "name": "KSante",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Gnar",
+    "name": "Akali",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Gnar",
+    "name": "Renekton",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Gnar",
+    "name": "Irelia",
+    "comment": "",
+    "rank": 2,
+    "role": "Top"
+  },
+  {
+    "champion": "Gnar",
+    "name": "Ornn",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Jayce",
+    "name": "Ornn",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Jayce",
+    "name": "Rumble",
+    "comment": "50/50",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Jayce",
+    "name": "Sion",
+    "comment": "brumble + aery",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Kennen",
+    "name": "Malphite",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Kennen",
+    "name": "Akali",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Kennen",
+    "name": "KSante",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Olaf",
+    "name": "Akali",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Olaf",
+    "name": "Jax",
+    "comment": "",
+    "rank": 2,
+    "role": "Top"
+  },
+  {
+    "champion": "Olaf",
+    "name": "Ambessa",
+    "comment": "",
+    "rank": 3,
+    "role": "Top"
+  },
+  {
+    "champion": "Yorick",
+    "name": "Irelia",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
+  },
+  {
+    "champion": "Yorick",
+    "name": "Aatrox",
+    "comment": "",
+    "rank": 2,
+    "role": "Top"
+  },
+  {
+    "champion": "Yorick",
+    "name": "Chogath",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
   }
 ]

@@ -2,5 +2,12 @@
   {
     "type": "config_favs",
     "list": []
+  },
+  {
+    "champion": "Aatrox",
+    "name": "Irelia",
+    "comment": "after lvl 4 he lose",
+    "rank": 2,
+    "role": "Top"
   }
 ]

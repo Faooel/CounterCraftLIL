@@ -762,5 +762,12 @@
     "comment": "",
     "rank": 2,
     "role": "Mid"
+  },
+  {
+    "champion": "Viktor",
+    "name": "Ryze",
+    "comment": "",
+    "rank": 3,
+    "role": "Mid"
   }
 ]

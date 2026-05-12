@@ -2,12 +2,5 @@
   {
     "type": "config_favs",
     "list": []
-  },
-  {
-    "champion": "Alistar",
-    "name": "Aatrox",
-    "comment": "TEST",
-    "rank": 1,
-    "role": "Support"
   }
 ]

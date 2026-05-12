@@ -23,5 +23,12 @@
     "comment": "level 4 win",
     "rank": 3,
     "role": "Top"
+  },
+  {
+    "champion": "Aatrox",
+    "name": "Jax",
+    "comment": "",
+    "rank": 2,
+    "role": "Top"
   }
 ]

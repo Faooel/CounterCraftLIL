@@ -361,5 +361,12 @@
     "comment": "",
     "rank": 1,
     "role": "Top"
+  },
+  {
+    "champion": "Jayce",
+    "name": "Rumble",
+    "comment": "50/50",
+    "rank": 3,
+    "role": "Top"
   }
 ]

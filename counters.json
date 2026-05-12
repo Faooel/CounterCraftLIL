@@ -9,5 +9,12 @@
     "comment": "after lvl 4 he lose",
     "rank": 2,
     "role": "Top"
+  },
+  {
+    "champion": "Aatrox",
+    "name": "Renekton",
+    "comment": "all time prio",
+    "rank": 1,
+    "role": "Top"
   }
 ]

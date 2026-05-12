@@ -629,5 +629,12 @@
     "comment": "",
     "rank": 3,
     "role": "Mid"
+  },
+  {
+    "champion": "Orianna",
+    "name": "Syndra",
+    "comment": "50/50",
+    "rank": 5,
+    "role": "Mid"
   }
 ]

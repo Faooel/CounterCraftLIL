@@ -368,5 +368,12 @@
     "comment": "50/50",
     "rank": 3,
     "role": "Top"
+  },
+  {
+    "champion": "Jayce",
+    "name": "Sion",
+    "comment": "brumble + aery",
+    "rank": 3,
+    "role": "Top"
   }
 ]

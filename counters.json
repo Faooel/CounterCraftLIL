@@ -477,5 +477,12 @@
     "comment": "",
     "rank": 1,
     "role": "Mid"
+  },
+  {
+    "champion": "Ahri",
+    "name": "TwistedFate",
+    "comment": "",
+    "rank": 2,
+    "role": "Mid"
   }
 ]

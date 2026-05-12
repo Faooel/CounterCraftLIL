@@ -748,5 +748,12 @@
     "comment": "",
     "rank": 1,
     "role": "Mid"
+  },
+  {
+    "champion": "Viktor",
+    "name": "Aurora",
+    "comment": "",
+    "rank": 2,
+    "role": "Mid"
   }
 ]

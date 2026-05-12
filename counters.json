@@ -375,5 +375,12 @@
     "comment": "brumble + aery",
     "rank": 3,
     "role": "Top"
+  },
+  {
+    "champion": "Kennen",
+    "name": "Malphite",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
   }
 ]

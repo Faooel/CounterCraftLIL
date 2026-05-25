@@ -1220,5 +1220,12 @@
     "comment": "",
     "rank": 1,
     "role": "Support"
+  },
+  {
+    "champion": "Karma",
+    "name": "Rell",
+    "comment": "",
+    "rank": 2,
+    "role": "Support"
   }
 ]

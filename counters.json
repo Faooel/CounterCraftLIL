@@ -1164,5 +1164,12 @@
     "comment": "",
     "rank": 3,
     "role": "Support"
+  },
+  {
+    "champion": "Bard",
+    "name": "Poppy",
+    "comment": "",
+    "rank": 1,
+    "role": "Support"
   }
 ]

@@ -1116,5 +1116,12 @@
     "comment": "",
     "rank": 1,
     "role": "Support"
+  },
+  {
+    "champion": "Alistar",
+    "name": "Karma",
+    "comment": "",
+    "rank": 2,
+    "role": "Support"
   }
 ]

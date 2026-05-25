@@ -1846,5 +1846,12 @@
     "comment": "",
     "rank": 1,
     "role": "Support"
+  },
+  {
+    "champion": "Milio",
+    "name": "Nautilus",
+    "comment": "wait lvl 6 / match up dépendant",
+    "rank": 5,
+    "role": "Support"
   }
 ]

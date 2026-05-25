@@ -1137,5 +1137,12 @@
     "comment": "",
     "rank": 1,
     "role": "Support"
+  },
+  {
+    "champion": "Alistar",
+    "name": "Poppy",
+    "comment": "",
+    "rank": 5,
+    "role": "Support"
   }
 ]

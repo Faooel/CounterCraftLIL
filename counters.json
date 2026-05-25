@@ -1157,5 +1157,12 @@
     "comment": "",
     "rank": 2,
     "role": "Support"
+  },
+  {
+    "champion": "Bard",
+    "name": "Nami",
+    "comment": "",
+    "rank": 3,
+    "role": "Support"
   }
 ]

@@ -1171,5 +1171,12 @@
     "comment": "",
     "rank": 1,
     "role": "Support"
+  },
+  {
+    "champion": "Bard",
+    "name": "Rell",
+    "comment": "",
+    "rank": 5,
+    "role": "Support"
   }
 ]

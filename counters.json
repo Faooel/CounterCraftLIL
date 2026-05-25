@@ -1143,5 +1143,12 @@
     "comment": "",
     "rank": 5,
     "role": "Support"
+  },
+  {
+    "champion": "Bard",
+    "name": "Nautilus",
+    "comment": "",
+    "rank": 1,
+    "role": "Support"
   }
 ]

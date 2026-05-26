@@ -1853,5 +1853,12 @@
     "comment": "wait lvl 6 / match up dépendant",
     "rank": 5,
     "role": "Support"
+  },
+  {
+    "champion": "Ornn",
+    "name": "Camille",
+    "comment": "",
+    "rank": 1,
+    "role": "Top"
   }
 ]

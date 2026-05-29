@@ -1958,5 +1958,12 @@
     "comment": "",
     "rank": 2,
     "role": "Mid"
+  },
+  {
+    "champion": "Annie",
+    "name": "Ahri",
+    "comment": "",
+    "rank": 3,
+    "role": "Mid"
   }
 ]
